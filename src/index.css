@@ -1,0 +1,140 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --bg: #f7f8fa;
+  --bg-soft: #ffffff;
+  --fg: #0f172a;
+  --muted: #64748b;
+  --accent: #4f46e5;
+  --accent-2: #06b6d4;
+  --border: #e6e8ec;
+  --card: #ffffff;
+  /* 技能云气泡渐变终点色（浅色模式：白色） */
+  --cloud-to: #ffffff;
+}
+
+.dark {
+  --bg: #0b0f1a;
+  --bg-soft: #111827;
+  --fg: #e5e7eb;
+  --muted: #94a3b8;
+  --accent: #818cf8;
+  --accent-2: #22d3ee;
+  --border: #1f2937;
+  --card: #0f1623;
+  /* 深色模式：渐变过渡到卡片底色，避免纯白突兀 */
+  --cloud-to: #141d2c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Reveal on scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Gradient text */
+.grad-text {
+  background: linear-gradient(120deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Skill cloud float */
+@keyframes cloud-float {
+  0% {
+    transform: translate(-50%, -50%) translate(0, 0);
+  }
+  100% {
+    transform: translate(-50%, -50%) translate(var(--float-x, 8px), var(--float-y, -8px));
+  }
+}
+
+/* Project detail switch-in */
+@keyframes detail-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-detail {
+  animation: detail-in 0.45s ease both;
+}
+
+/* Illustration gentle floating */
+@keyframes illus-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+.illus-float {
+  animation: illus-float 4.5s ease-in-out infinite;
+}
+.illus-float-slow {
+  animation: illus-float 5.5s ease-in-out 0.8s infinite;
+}
+.illus-float-slower {
+  animation: illus-float 6.5s ease-in-out 1.6s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-detail,
+  .illus-float,
+  .illus-float-slow,
+  .illus-float-slower {
+    animation: none;
+  }
+}
+
+/* Thin scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 999px;
+}

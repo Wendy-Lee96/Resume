@@ -1,0 +1,6 @@
+node_modules/
+.npm-cache/
+*.tsbuildinfo
+resume_extract.txt
+.DS_Store
+*.log
