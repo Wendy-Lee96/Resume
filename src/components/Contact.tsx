@@ -67,7 +67,7 @@ export function Contact() {
     <section id="contact" className="relative overflow-hidden px-4 py-24 sm:px-6">
       {/* 背景插图（居中铺满，低透明度） */}
       <img
-        src="/images/office-scene.jpg"
+        src="./images/office-scene.jpg"
         alt=""
         aria-hidden
         className="pointer-events-none absolute inset-0 h-full w-full object-cover object-center opacity-[0.07] dark:opacity-[0.05]"

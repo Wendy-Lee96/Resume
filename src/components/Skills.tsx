@@ -22,7 +22,7 @@ export function Skills() {
         <div className="mt-8 grid gap-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-stretch">
           <div className="overflow-hidden rounded-3xl">
             <img
-              src="/images/data-cubes.jpg"
+              src="./images/data-cubes.jpg"
               alt=""
               aria-hidden
               className="h-full min-h-[240px] w-full object-cover dark:opacity-25 lg:min-h-[320px]"

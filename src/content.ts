@@ -13,9 +13,9 @@ export const profile = {
   wechat: 'Wendy_Lee_Oct',
   phone: '176-9108-3603',
   // 头像地址（public/avatar.jpg）
-  avatarUrl: '/avatar.jpg',
+  avatarUrl: './avatar.jpg',
   // 简历 PDF 下载地址（public/resume.pdf）
-  resumeUrl: '/resume.pdf',
+  resumeUrl: './resume.pdf',
 }
 
 // Hero 数据墙

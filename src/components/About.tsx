@@ -30,7 +30,7 @@ export function About() {
               {/* 插画：固定 320px 高，左侧 */}
               <div className="h-[260px] w-full shrink-0 overflow-hidden rounded-2xl sm:w-[200px]">
                 <img
-                  src="/images/ai-pm.jpg"
+                  src="./images/ai-pm.jpg"
                   alt="全链路 AI 产品人插画风形象"
                   className="h-full w-full object-cover"
                 />
