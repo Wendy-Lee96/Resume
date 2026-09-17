@@ -12,6 +12,7 @@ import {
   User,
   ChevronDown,
   ChevronUp,
+  TrendingUp,
 } from 'lucide-react'
 import { projects } from '../content'
 import { useReveal } from '../hooks/useReveal'
@@ -189,6 +190,37 @@ export function Projects() {
                   项目概述
                 </div>
                 <p className="mt-2 text-sm leading-7 text-[var(--muted)]">{project.overview}</p>
+              </div>
+
+              {/* business value */}
+              <div
+                className="mt-4 rounded-2xl border p-4"
+                style={{ borderColor: `${color}40`, background: cardBg(color) }}
+              >
+                <div
+                  className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider"
+                  style={{ color }}
+                >
+                  <TrendingUp size={15} />
+                  商业价值
+                </div>
+                <p className="mt-2 text-sm font-medium leading-7" style={{ color }}>
+                  {project.businessValue.summary}
+                </p>
+                <ul className="mt-3 space-y-2">
+                  {project.businessValue.points.map((p) => (
+                    <li
+                      key={p}
+                      className="flex items-start gap-2 text-sm leading-6 text-[var(--muted)]"
+                    >
+                      <span
+                        className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full"
+                        style={{ background: color }}
+                      />
+                      {p}
+                    </li>
+                  ))}
+                </ul>
               </div>
 
               {/* results */}
